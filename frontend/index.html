@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickBite - Food Delivery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Quick<span>Bite</span></div>
+    <div class="status-bar"><span class="dot"></span> System Online</div>
+  </header>
+
+  <div class="layout">
+
+    <!-- LEFT: Menu -->
+    <div class="panel">
+      <div class="panel-title">Menu</div>
+      <div class="panel-body">
+        <div class="menu-item" onclick="placeOrder('Burger', 100, '🍔')">
+          <div class="item-emoji">🍔</div>
+          <div class="item-info">
+            <div class="item-name">Burger</div>
+            <div class="item-desc">Classic beef patty</div>
+          </div>
+          <div class="item-price">Rs.100</div>
+          <button class="add-btn">+</button>
+        </div>
+        <div class="menu-item" onclick="placeOrder('Pizza', 200, '🍕')">
+          <div class="item-emoji">🍕</div>
+          <div class="item-info">
+            <div class="item-name">Pizza</div>
+            <div class="item-desc">Margherita special</div>
+          </div>
+          <div class="item-price">Rs.200</div>
+          <button class="add-btn">+</button>
+        </div>
+        <div class="menu-item" onclick="placeOrder('Sandwich', 80, '🥪')">
+          <div class="item-emoji">🥪</div>
+          <div class="item-info">
+            <div class="item-name">Sandwich</div>
+            <div class="item-desc">Grilled veggie</div>
+          </div>
+          <div class="item-price">Rs.80</div>
+          <button class="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIDDLE: Queue -->
+    <div class="panel middle-panel">
+      <div class="panel-title">Active Orders — Queue</div>
+      <div class="panel-body" id="queue-body">
+        <div class="empty-state" id="queue-empty">
+          <div class="empty-icon">🛵</div>
+          <div class="empty-text">No orders yet.<br>Pick something from the menu!</div>
+        </div>
+      </div>
+      <button class="deliver-all-btn" onclick="deliverNext()">Deliver Next Order</button>
+    </div>
+
+    <!-- RIGHT: Stats + History -->
+    <div class="panel right-panel">
+      <div class="panel-title">Stats</div>
+      <div class="panel-body stats-body">
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num" id="stat-queued">0</div>
+            <div class="stat-label">In Queue</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" id="stat-delivered">0</div>
+            <div class="stat-label">Delivered</div>
+          </div>
+        </div>
+        <div class="stat-card full-stat">
+          <div class="stat-num" id="stat-revenue">Rs.0</div>
+          <div class="stat-label">Total Revenue</div>
+        </div>
+      </div>
+
+      <div class="panel-title history-title">History — Stack</div>
+      <div class="panel-body history-body" id="history-body">
+        <div class="empty-state" id="history-empty">
+          <div class="empty-icon">📋</div>
+          <div class="empty-text">No deliveries yet.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
