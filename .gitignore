@@ -1,0 +1,19 @@
+# Compiled C files
+food
+*.exe
+
+# Runtime files
+state.dat
+backend/state.dat
+
+# Python cache
+__pycache__/
+
+# Mac system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Ignore PDFs (your report)
+*.pdf
